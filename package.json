@@ -1,0 +1,27 @@
+{
+  "name": "mousecontract",
+  "version": "1.0.0",
+  "types": "assembly/index.ts",
+  "description": "Near smart contract for the mousehunt project",
+  "main": "assembly/index.ts",
+  "scripts": {
+    "test": "asp",
+    "build": "yarn build:release && yarn build:debug",
+    "build:release": "asb --wat",
+    "build:debug": "asb --target debug --wat"
+  },
+  "keywords": [
+    "Near",
+    "SmartContract",
+    "WeabAssembly"
+  ],
+  "author": "Synthia",
+  "license": "ISC",
+  "devDependencies": {
+    "@as-pect/cli": "^6.2.4",
+    "asbuild": "^0.2.0",
+    "assemblyscript": "^0.19.22",
+    "near-cli": "^3.1.0",
+    "near-sdk-as": "^3.2.3"
+  }
+}

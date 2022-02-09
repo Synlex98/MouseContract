@@ -1,0 +1,9 @@
+{
+  "targets": {
+    "release": {
+      "optimizeLevel": 3,
+      "shrinkLevel": 2
+    }
+  },
+  "extends": "near-sdk-as/asconfig.json"
+}
