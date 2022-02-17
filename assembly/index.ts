@@ -24,11 +24,11 @@ export function getUser(userId:i64):User{
     return user
 }
 
-export function changeLevel(level:Level):void{
-    let user=storage.getSome<User>(level.userId.toString())
+export function changeLevel(userId:i64,level:i64):void{
+    let user=storage.getSome<User>(userId.toString())
     assert(user.exists(),"Unkown user")
-    user.level=level;
-    storage.set(level.userId.toString(),user);
+    user.level.levelNumber=level;
+    storage.set(userId.toString(),user);
 }
 
 export function getCurrentUserLevel(userId:i64):Level{
@@ -37,11 +37,11 @@ export function getCurrentUserLevel(userId:i64):Level{
     return user.level
 }
 
-export function updatePoints(points:Points):void{
-    let user=storage.getSome<User>(points.userId.toString())
+export function updatePoints(userId:i64,points:i64):void{
+    let user=storage.getSome<User>(userId.toString())
     assert(user.exists(),"Unkown user")
-    user.points=points;
-    storage.set(points.userId.toString(),user);
+    user.points.points=points;
+    storage.set(userId.toString(),user);
 }
 
 export function getCurrentUserPoints(userId:i64):Points{
