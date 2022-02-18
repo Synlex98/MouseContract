@@ -21,7 +21,7 @@ describe("Gets an already created user", () => {
 describe("Adds user points", () => {
     it('Confirms user points changed ', () => {
         let points=new Points(100,10)
-        updatePoints(points)
+        updatePoints(100,10)
         let fetchedUser = getUser(i32(100));
         log(fetchedUser)
         expect(i32(fetchedUser.points.points)).toBeGreaterThan(i32(10))
@@ -32,7 +32,7 @@ describe("Updates the user level", () => {
     it('Confirms user points changed ', () => {
         let firstUser = getUser(i32(100));
         let level=new Level(100,12)
-        changeLevel(level)
+        changeLevel(100,12)
         let fetchedUser = getUser(i32(100));
         log(fetchedUser)
         assert(i32(fetchedUser.level.levelNumber) != firstUser.level.levelNumber)
